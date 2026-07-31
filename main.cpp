@@ -1,8 +1,12 @@
 #include <iostream>
+#include <string>
+#include <algorithm>
 
 int main() {
-    int w, h;
-    std::cin >> w >> h;
-    std::cout << w * h << std::endl;
+    std::string s;
+    std::getline(std::cin, s);
+    std::reverse(s.begin(), s.end());
+    std::cout << s << std::endl;
+
     return 0;
 }
