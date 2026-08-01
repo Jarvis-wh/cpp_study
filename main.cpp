@@ -3,11 +3,17 @@
 #include <algorithm>
 
 int main() {
-    std::string name;
-    int age;
-    std::getline(std::cin, name);
-    std::cin >> age;
+    int n;
+    std::cin >> n;
 
-    std::cout << "Hi, " << name << "! You are " << age << " years old." << std::endl;
+    if(n%15 == 0) {
+        std::cout << "FizzBuzz" << std::endl;
+    } else if(n%3 == 0) {
+        std::cout << "Fizz" << std::endl;
+    } else if(n%5 == 0) {
+        std::cout << "Buzz" << std::endl;
+    } else {
+        std::cout << n << std::endl;
+    }
     return 0;
 }
