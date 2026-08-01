@@ -1,13 +1,16 @@
 #include <iostream>
 
-int square(int n) {
-    // Return n * n.
-    return n * n;
+void swap(int& a, int& b) {
+    // Swap a and b.
+    int temp = a;
+    a = b;
+    b = temp;
 }
 
 int main() {
-    int n;
-    std::cin >> n;
-    std::cout << square(n) << "\n";
+    int a, b;
+    std::cin >> a >> b;
+    swap(a, b);
+    std::cout << a << " " << b << "\n";
     return 0;
 }
