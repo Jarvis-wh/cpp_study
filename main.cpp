@@ -1,15 +1,13 @@
 #include <iostream>
-#include <string>
-#include <algorithm>
+
+int square(int n) {
+    // Return n * n.
+    return n * n;
+}
 
 int main() {
     int n;
     std::cin >> n;
-
-    int sum{0};
-    for(int i = 1; i <= n; ++i) {
-        sum += i;
-    }
-    std::cout << sum;
+    std::cout << square(n) << "\n";
     return 0;
 }
