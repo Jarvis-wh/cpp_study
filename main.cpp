@@ -1,18 +1,21 @@
 #include <iostream>
-#include <vector>
-#include <numeric>
+
+class Rectangle {
+    // private members
+    int width;
+    int height;
+public:
+    // constructor + area() + perimeter()
+    Rectangle(int w, int h) : width{w}, height{h} {};
+    int area() const {return width * height;};
+    int perimeter() const {return 2 * (width + height);};
+};
 
 int main() {
-    std::vector<long long> nums;
-    long long x;
-    while (std::cin >> x) nums.push_back(x);
-    // Filter evens, square, sum, and print.
-    long long sum = std::accumulate(nums.begin(), nums.end(), 0LL, [](long long acc, long long n) {
-        if (n % 2 == 0) {
-            return acc + n * n;
-        }
-        return acc;
-    });
-    std::cout << sum << std::endl;
+    int w, h;
+    std::cin >> w >> h;
+    Rectangle r{w, h};
+    std::cout << "area: " << r.area() << std::endl;
+    std::cout << "perimeter: " << r.perimeter() << std::endl;
     return 0;
 }
