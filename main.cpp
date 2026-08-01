@@ -1,17 +1,16 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <unordered_set>
+#include <string>
+#include <sstream>
 
 int main() {
-    std::vector<int> nums;
-    int x;
-    while (std::cin >> x) nums.push_back(x);
-    // Find and print the maximum using std::max_element.
-    auto max_it = std::max_element(nums.begin(), nums.end());
-    if (max_it != nums.end()) {
-        std::cout << *max_it << std::endl;
-    } else {    
-        std::cout << "No numbers were entered." << std::endl;
-    }
+    std::string line;
+    std::getline(std::cin, line);
+    std::unordered_set<std::string> seen;
+    std::istringstream iss(line);
+    std::string word;
+    while (iss >> word) seen.insert(word);
+    // Print seen.size().
+    std::cout << seen.size() << std::endl;
     return 0;
 }
