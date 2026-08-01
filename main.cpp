@@ -1,16 +1,18 @@
 #include <iostream>
-#include <unordered_set>
-#include <string>
-#include <sstream>
+#include <vector>
+#include <numeric>
 
 int main() {
-    std::string line;
-    std::getline(std::cin, line);
-    std::unordered_set<std::string> seen;
-    std::istringstream iss(line);
-    std::string word;
-    while (iss >> word) seen.insert(word);
-    // Print seen.size().
-    std::cout << seen.size() << std::endl;
+    std::vector<long long> nums;
+    long long x;
+    while (std::cin >> x) nums.push_back(x);
+    // Filter evens, square, sum, and print.
+    long long sum = std::accumulate(nums.begin(), nums.end(), 0LL, [](long long acc, long long n) {
+        if (n % 2 == 0) {
+            return acc + n * n;
+        }
+        return acc;
+    });
+    std::cout << sum << std::endl;
     return 0;
 }
