@@ -3,10 +3,11 @@
 #include <algorithm>
 
 int main() {
-    std::string s;
-    std::getline(std::cin, s);
-    std::reverse(s.begin(), s.end());
-    std::cout << s << std::endl;
+    std::string name;
+    int age;
+    std::getline(std::cin, name);
+    std::cin >> age;
 
+    std::cout << "Hi, " << name << "! You are " << age << " years old." << std::endl;
     return 0;
 }
